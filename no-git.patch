@@ -1,0 +1,26 @@
+--- automat-24.8.1/docs/conf.py~	2024-08-18 02:41:47.000000000 +0200
++++ automat-24.8.1/docs/conf.py	2025-04-08 01:29:04.729979460 +0200
+@@ -44,22 +44,7 @@
+ _project_root = pathlib.Path(__file__).parent.parent
+ _source_root = _project_root / "src"
+ 
+-_git_reference = subprocess.run(
+-    ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+-    text=True,
+-    encoding="utf8",
+-    capture_output=True,
+-    check=True,
+-).stdout
+-
+-
+-# Try to find URL fragment for the GitHub source page based on current
+-# branch or tag.
+-
+-if _git_reference == "HEAD":
+-    # It looks like the branch has no name.
+-    # Fallback to commit ID.
+-    _git_reference = subprocess.getoutput("git rev-parse HEAD")
++_git_reference = "v@@VERSION@@"
+ 
+ if os.environ.get("READTHEDOCS", "") == "True":
+     rtd_version = os.environ.get("READTHEDOCS_VERSION", "")
