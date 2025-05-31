@@ -98,7 +98,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/automat-visualize
 %attr(755,root,root) %{_bindir}/automat-visualize-3
 %{py3_sitescriptdir}/automat
-%{py3_sitescriptdir}/Automat-%{version}.dist-info
+%{py3_sitescriptdir}/automat-%{version}.dist-info
 %{_examplesdir}/python3-automat-%{version}
 
 %if %{with doc}
