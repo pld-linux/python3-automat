@@ -7,7 +7,7 @@ Summary:	Self-service finite-state machines for the programmer on the go
 Summary(pl.UTF-8):	Bezobsługowe automaty skończone dla programisty w biegu
 Name:		python3-automat
 Version:	24.8.1
-Release:	1
+Release:	2
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/automat/
