@@ -15,10 +15,10 @@ Source0:	https://files.pythonhosted.org/packages/source/a/automat/automat-%{vers
 # Source0-md5:	c023f8848366053a76f99cffba3ea34e
 Patch0:		no-git.patch
 URL:		https://pypi.org/project/Automat/
-BuildRequires:	python3-modules >= 1:3.5
+BuildRequires:	python3-modules >= 1:3.8
 BuildRequires:	python3-build
 BuildRequires:	python3-installer
-BuildRequires:	python3-setuptools >= 35.0.2
+BuildRequires:	python3-setuptools >= 1:35.0.2
 BuildRequires:	python3-setuptools_scm
 BuildRequires:	python3-wheel >= 0.29.0
 %if %{with tests}
@@ -28,12 +28,13 @@ BuildRequires:	python3-pytest
 BuildRequires:	python3-twisted >= 16.1.1
 %endif
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.714
+BuildRequires:	rpmbuild(macros) >= 2.044
 %if %{with doc}
 BuildRequires:	python3-pydoctor
+BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	sphinx-pdg-3
 %endif
-Requires:	python-modules >= 1:2.7
+Requires:	python3-modules >= 1:3.8
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
