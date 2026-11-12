@@ -6,17 +6,18 @@
 Summary:	Self-service finite-state machines for the programmer on the go
 Summary(pl.UTF-8):	Bezobsługowe automaty skończone dla programisty w biegu
 Name:		python3-automat
-Version:	24.8.1
-Release:	2
+Version:	25.4.16
+Release:	1
 License:	MIT
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/automat/
 Source0:	https://files.pythonhosted.org/packages/source/a/automat/automat-%{version}.tar.gz
-# Source0-md5:	c023f8848366053a76f99cffba3ea34e
+# Source0-md5:	a725256be8545c32048eb12239caeebb
 Patch0:		no-git.patch
 URL:		https://pypi.org/project/Automat/
-BuildRequires:	python3-modules >= 1:3.8
+BuildRequires:	python3-modules >= 1:3.9
 BuildRequires:	python3-build
+BuildRequires:	python3-hatch-vcs
 BuildRequires:	python3-installer
 BuildRequires:	python3-setuptools >= 1:35.0.2
 BuildRequires:	python3-setuptools_scm
@@ -34,7 +35,7 @@ BuildRequires:	python3-pydoctor
 BuildRequires:	python3-sphinx_rtd_theme
 BuildRequires:	sphinx-pdg-3
 %endif
-Requires:	python3-modules >= 1:3.8
+Requires:	python3-modules >= 1:3.9
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -70,7 +71,7 @@ Dokumentacja API modułu Pythona automat.
 
 %if %{with tests}
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
-%{__python3} -m pytest automat/_test
+%{__python3} -m pytest src/automat/_test
 %endif
 
 %if %{with doc}
